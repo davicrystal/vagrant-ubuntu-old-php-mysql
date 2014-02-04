@@ -7,6 +7,9 @@
 
 # SET THE ENVIRONMENT VARIABLES
 
+# THE PATH FOR BOOTSTRAP IN THE VM ENVIROMENT
+VANGRANT_BOOTSTRAP_PATH="/vagrant/vagrant-ubuntu-old-php-mysql"
+
 # THE PATH FOR VANGRANT FILE IN THE VM ENVIRONMENT
 VANGRANT_MAIN_PATH="/vagrant"
 
@@ -32,7 +35,7 @@ VAGRANT_MYSQL_MY_CNF="/etc/mysql"
 VAGRANT_PHPMYADMIN_VERSION="http://sourceforge.net/projects/phpmyadmin/files/phpMyAdmin/4.1.6/phpMyAdmin-4.1.6-all-languages.tar.gz"
 
 # PATH FOR PHPMYADMIN INSTALLATION
-VAGRANT_PHPMYADMIN_PATH="/var/www/"
+VAGRANT_PHPMYADMIN_PATH="/usr/share/"
 
 # ALLOW ACCESS FOR USER WITH NO PASSWORD IN THE PHPMYADMIN
 VAGRANT_PHPMYADMIN_ALLOWNOPASSWORD="true"
@@ -58,29 +61,29 @@ export VAGRANT_TARGZ_FILE
 export VAGRANT_TMP_PATH
 
 # IMPORT FUNCTIONS
-. "$VANGRANT_MAIN_PATH"/bootstrap/screenplay/lib/functions.sh
+. "$VANGRANT_BOOTSTRAP_PATH"/screenplay/lib/functions.sh
 
 # UPDATE THE APT-GET REPOSITORIES
 sudo apt-get update
 
 # INSTALL THE APACHE SERVER
-export VANGRANT_MAIN_PATH
 export VANGRANT_WWW_PATH
-sh "$VANGRANT_MAIN_PATH"/bootstrap/screenplay/apache2-install.sh
-
-# INSTALL THE PHP
-getFile "$VAGRANT_PHP_VERSION"
-getPath "$VAGRANT_TARGZ_FILE"
-export VAGRANT_PHP_INI_PATH
-export VAGRANT_PHP_VERSION
-sh "$VANGRANT_MAIN_PATH"/bootstrap/screenplay/php-install.sh
+export VANGRANT_MAIN_PATH
+sh "$VANGRANT_BOOTSTRAP_PATH"/screenplay/apache2-install.sh
 
 # INSTALL THE MYSQL
 getFile "$VAGRANT_MYSQL_VERSION"
 getPath "$VAGRANT_TARGZ_FILE"
 export VAGRANT_MYSQL_VERSION
 export VAGRANT_MYSQL_MY_CNF
-sh "$VANGRANT_MAIN_PATH"/bootstrap/screenplay/mysql-install.sh
+sh "$VANGRANT_BOOTSTRAP_PATH"/screenplay/mysql-install.sh
+
+# INSTALL THE PHP
+getFile "$VAGRANT_PHP_VERSION"
+getPath "$VAGRANT_TARGZ_FILE"
+export VAGRANT_PHP_INI_PATH
+export VAGRANT_PHP_VERSION
+sh "$VANGRANT_BOOTSTRAP_PATH"/screenplay/php-install.sh
 
 # INSTALL THE PHPMYADMIN
 getFile "$VAGRANT_PHPMYADMIN_VERSION"
@@ -88,15 +91,16 @@ getPath "$VAGRANT_TARGZ_FILE"
 export VAGRANT_PHPMYADMIN_VERSION
 export VAGRANT_PHPMYADMIN_PATH
 export VAGRANT_PHPMYADMIN_ALLOWNOPASSWORD
-sh "$VANGRANT_MAIN_PATH"/bootstrap/screenplay/phpmyadmin-install.sh
+sh "$VANGRANT_BOOTSTRAP_PATH"/screenplay/phpmyadmin-install.sh
 
 # INSTALL OTHER APT-GET PACKAGES
 export VAGRANT_OTHER_PACKAGES
-sh "$VANGRANT_MAIN_PATH"/bootstrap/screenplay/other-install.sh
+sh "$VANGRANT_BOOTSTRAP_PATH"/screenplay/other-install.sh
 
 # GENERATE A INFO PHP FILE
 echo "... GENERATING THE INFO.PHP FILE"
-sudo echo "<?php phpinfo(); ?>" >> "$VANGRANT_WWW_PATH"/info.php
+sudo touch "$VANGRANT_WWW_PATH"/info.php
+sudo echo "<?php phpinfo(); ?>" > "$VANGRANT_WWW_PATH"/info.php
 
 echo "###########################################################"
 echo "####               ALL DONE! GOOD WORK! :)             ####"

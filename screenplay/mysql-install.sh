@@ -31,7 +31,6 @@ sudo ln -s /usr/local/mysql/bin/* /bin/
 sudo ln -s /etc/init.d/mysql.server /etc/init.d/mysql
 sudo update-rc.d mysql.server defaults
 sudo mkdir /var/run/mysqld
-#sudo ln -s /tmp/mysql.sock /var/run/mysqld/mysqld.sock
-sudo mv /tmp/mysql.sock /var/run/mysqld/mysqld.sock
+sudo ln -s /tmp/mysql.sock /var/run/mysqld/mysqld.sock
 sudo /etc/init.d/mysql start
 cd
