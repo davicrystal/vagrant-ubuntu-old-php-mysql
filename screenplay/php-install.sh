@@ -4,7 +4,7 @@
 # AUTHOR: DAVI CRYSTAL / davicrystal@gmail.com / twitter.com/davicrystal
 
 echo "###########################################################"
-echo "####              3/6 - PHP INSTALATION                ####"
+echo "####              4/6 - PHP INSTALATION                ####"
 echo "###########################################################"
 
 sudo apt-get install libxml2-dev

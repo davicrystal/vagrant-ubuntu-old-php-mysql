@@ -44,7 +44,7 @@ VAGRANT_PHPMYADMIN_ALLOWNOPASSWORD="true"
 # PLEASE: DON'T INSTALL APACHE, PHP, MYSQL, PHPMYADMIN :/
 # THE FOLLOW PACKAGES WILL BE INSTALLED: apache2-threaded-dev libapache2-mod-php5 libxml2-dev
 # EXEMPLE OF USE: VAGRANT_OTHERS_PACKAGES="php5-cli php5-dev php5-mcrypt php5-curl php5-gd"
-VAGRANT_OTHER_PACKAGES="php5-mysql php5-curl php5-json php5-mcrypt dbconfig-common javascript-common libdbd-mysql-perl libdbi-perl libjs-codemirror libjs-jquery libjs-jquery-cookie libjs-jquery-event-drag libjs-jquery-metadata libjs-jquery-mousewheel libjs-jquery-tablesorter libjs-jquery-ui libmcrypt4 libnet-daemon-perl libplrpc-perl libterm-readkey-perl mysql-client mysql-client-5.5 mysql-client-core-5.5 php-gettext php5-gd wwwconfig-common"
+VAGRANT_OTHER_PACKAGES="php5-mysql php5-curl"
 
 ###################################################################
 ### AFTER THIS POINT JUST CHANGE IF YOU KNOW WHAT YOU ARE DOING ###

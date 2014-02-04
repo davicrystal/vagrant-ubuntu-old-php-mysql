@@ -4,7 +4,7 @@
 # AUTHOR: DAVI CRYSTAL / davicrystal@gmail.com / twitter.com/davicrystal
 
 echo "###########################################################"
-echo "####              4/5 - MYSQL INSTALATION              ####"
+echo "####              1/5 - MYSQL INSTALATION              ####"
 echo "###########################################################"
 sudo apt-get install libaio1
 sudo groupadd mysql
