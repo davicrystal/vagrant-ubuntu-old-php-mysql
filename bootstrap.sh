@@ -2,7 +2,7 @@
 
 # SHELL BOOTSTRAP SCREENPLAY FOR GENERATE UBUNTU ENVIRONMENT WITH OLD OR NEW VERSIONS OF PHP AND MYSQL 
 # IMPORTANT: FOR VAGRANT USE ONLY / Vagrant version (1.4.3)
-# DESIGNED FOR UBUNTU 13.04 AMD64 USING AND PHP5.X
+# DESIGNED FOR UBUNTU 13.X USING AND PHP5.X
 # AUTHOR: DAVI CRYSTAL / davicrystal@gmail.com / twitter.com/davicrystal
 
 # SET THE ENVIRONMENT VARIABLES
@@ -112,6 +112,12 @@ sh "$VANGRANT_BOOTSTRAP_PATH"/screenplay/phpmyadmin-install.sh
 export VAGRANT_OTHER_PACKAGES
 export VAGRANT_PHPx_MYSQL
 sh "$VANGRANT_BOOTSTRAP_PATH"/screenplay/other-install.sh
+
+# RUN THE CUSTOMIZED PROCEDURES
+echo "###########################################################"
+echo "####              CUSTOMIZED PROCEDURES                ####"
+echo "###########################################################"
+sh "$VANGRANT_BOOTSTRAP_PATH"/screenplay/custom-install.sh
 
 # GENERATE A INFO PHP FILE
 echo "... GENERATING THE INFO.PHP FILE"

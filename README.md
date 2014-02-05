@@ -8,6 +8,8 @@ CONFIGURATION
 
 **You need to open the bootstrap.sh file and to configure the work paths** and if you want, change the sources of the PHP and MYSQL to get other versions of these. You can also change other variables to customize your own environment.
 
+You can use the file **custom-install.sh** in the **screenplay** folder to put your own customized procedures
+
 GET STARTED
 ========
 
