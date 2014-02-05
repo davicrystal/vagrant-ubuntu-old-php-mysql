@@ -4,7 +4,7 @@
 # AUTHOR: DAVI CRYSTAL / davicrystal@gmail.com / twitter.com/davicrystal
 
 echo "###########################################################"
-echo "####     6/6 - STARTING THE OTHER INSTALLATIONS        ####"
+echo "####     5/6 - STARTING THE OTHER INSTALLATIONS        ####"
 echo "###########################################################"
 
 	echo "--> INSTALLING THE phpX-mysql PACKAGE"

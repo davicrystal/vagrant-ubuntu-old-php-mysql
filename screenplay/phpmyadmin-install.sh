@@ -4,7 +4,7 @@
 # AUTHOR: DAVI CRYSTAL / davicrystal@gmail.com / twitter.com/davicrystal
 
 echo "###########################################################"
-echo "####     5/6 - STARTING THE PHPMYADMIN INSTALLATION    ####"
+echo "####     4/6 - STARTING THE PHPMYADMIN INSTALLATION    ####"
 echo "###########################################################"
 
 cd "$VAGRANT_PHPMYADMIN_PATH"

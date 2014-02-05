@@ -115,7 +115,7 @@ sh "$VANGRANT_BOOTSTRAP_PATH"/screenplay/other-install.sh
 
 # RUN THE CUSTOMIZED PROCEDURES
 echo "###########################################################"
-echo "####              CUSTOMIZED PROCEDURES                ####"
+echo "####          6/6 - CUSTOMIZED PROCEDURES              ####"
 echo "###########################################################"
 sh "$VANGRANT_BOOTSTRAP_PATH"/screenplay/custom-install.sh
 
