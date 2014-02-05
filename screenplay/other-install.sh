@@ -7,9 +7,13 @@ echo "###########################################################"
 echo "####     6/6 - STARTING THE OTHER INSTALLATIONS        ####"
 echo "###########################################################"
 
+	echo "---> INSTALLING THE phpX-mysql PACKAGE"
+	export DEBIAN_FRONTEND=noninteractive | echo -e "N\nN\nN\n" | sudo apt-get install -y $VAGRANT_PHPx_MYSQL
+
 if [ -n VAGRANT_OTHER_PACKAGES ]; then
 
-	sudo apt-get install -y $VAGRANT_OTHER_PACKAGES
+	echo "---> INSTALLING THE OTHER PACKAGES"
+	export DEBIAN_FRONTEND=noninteractive | sudo apt-get install -y $VAGRANT_OTHER_PACKAGES
 
 fi
 

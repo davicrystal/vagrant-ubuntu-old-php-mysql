@@ -16,13 +16,16 @@ cd phpMyAdmin/
 sudo cp config.sample.inc.php config.inc.php
 ALLOWNOPASSWORD=$(echo $VAGRANT_PHPMYADMIN_ALLOWNOPASSWORD | tr [A-Z] [a-z])
 
-	if [ ALLOWNOPASSWORD = "true" ]; then
+	if [ "$ALLOWNOPASSWORD" = "true" ]; then
 
-		echo "ATTENTION: PHPMYADMIN ALLOWNOPASSWORD ACTIVATED!"
-	    sudo sed -i "s/\$cfg['Servers'][$i]['AllowNoPassword'] = false;/\$cfg['Servers'][$i]['AllowNoPassword'] = true;/g" config.inc.php 
+        echo "###########################################################"
+		echo "###  ATTENTION: PHPMYADMIN ALLOWNOPASSWORD ACTIVATED!  ####"
+		echo "###########################################################"
+
+	    sudo sed -i "s/\$cfg\['Servers'\]\[\$i\]\['AllowNoPassword'\] = false;/\$cfg\['Servers'\]\[\$i\]\['AllowNoPassword'\] = true;/g" config.inc.php 
+
 
 	fi
-	
-sudo chmod 755 -R config/
+
 sudo ln -s "$VAGRANT_PHPMYADMIN_PATH"/phpMyAdmin/ "$VANGRANT_WWW_PATH"/phpmyadmin
 cd

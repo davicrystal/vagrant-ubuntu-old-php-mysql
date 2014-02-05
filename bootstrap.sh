@@ -2,7 +2,7 @@
 
 # SHELL BOOTSTRAP SCREENPLAY FOR GENERATE UBUNTU ENVIRONMENT WITH OLD OR NEW VERSIONS OF PHP AND MYSQL 
 # IMPORTANT: FOR VAGRANT USE ONLY / Vagrant version (1.4.3)
-# DESIGNED FOR UBUNTU 13.04 AMD64 USING http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box
+# DESIGNED FOR UBUNTU 13.04 AMD64 USING AND PHP5.X
 # AUTHOR: DAVI CRYSTAL / davicrystal@gmail.com / twitter.com/davicrystal
 
 # SET THE ENVIRONMENT VARIABLES
@@ -30,6 +30,12 @@ VAGRANT_MYSQL_VERSION="http://downloads.mysql.com/archives/get/file/mysql-5.5.27
 # PATH FOR my.cnf
 VAGRANT_MYSQL_MY_CNF="/etc/mysql"
 
+# MYSQL USER WITH ALL PREVILEGES (DO NOT USE ROOT)
+VAGRANT_MYSQL_USER="test"
+
+# MYSQL MAIN USER PASSWORD (OPITIONAL)
+VAGRANT_MYSQL_PWD=""
+
 # URL FOR THE PHPMYADMIN INSTALLATION PACKAGE, SEE MORE VERSIONS OPTIONS IN http://www.phpmyadmin.net/home_page/downloads.php
 # IMPORTANT: THE CODE SUPORTS JUST.tar.gz FILES
 VAGRANT_PHPMYADMIN_VERSION="http://sourceforge.net/projects/phpmyadmin/files/phpMyAdmin/4.1.6/phpMyAdmin-4.1.6-all-languages.tar.gz"
@@ -40,11 +46,17 @@ VAGRANT_PHPMYADMIN_PATH="/usr/share/"
 # ALLOW ACCESS FOR USER WITH NO PASSWORD IN THE PHPMYADMIN
 VAGRANT_PHPMYADMIN_ALLOWNOPASSWORD="true"
 
+# SET THE NAME OF libapache2-mod-phpX for your PHP Version
+VAGRANT_APACHE2_MOD="libapache2-mod-php5"
+
+# SET THE NAME OF phpX-mysql for your PHP Version
+VAGRANT_PHPx_MYSQL="php5-mysql"
+
 # SET OTHER PACKAGES FOR APT-GET INSTALLATION, SPLIT IT WITH SPACES
 # PLEASE: DON'T INSTALL APACHE, PHP, MYSQL, PHPMYADMIN :/
 # THE FOLLOW PACKAGES WILL BE INSTALLED: apache2-threaded-dev libapache2-mod-php5 libxml2-dev
 # EXEMPLE OF USE: VAGRANT_OTHERS_PACKAGES="php5-cli php5-dev php5-mcrypt php5-curl php5-gd"
-VAGRANT_OTHER_PACKAGES="php5-mysql php5-curl"
+VAGRANT_OTHER_PACKAGES="php5-curl"
 
 ###################################################################
 ### AFTER THIS POINT JUST CHANGE IF YOU KNOW WHAT YOU ARE DOING ###
@@ -71,11 +83,14 @@ getFile "$VAGRANT_MYSQL_VERSION"
 getPath "$VAGRANT_TARGZ_FILE"
 export VAGRANT_MYSQL_VERSION
 export VAGRANT_MYSQL_MY_CNF
+export VAGRANT_MYSQL_USER
+export VAGRANT_MYSQL_PWD
 sh "$VANGRANT_BOOTSTRAP_PATH"/screenplay/mysql-install.sh
 
 # INSTALL THE APACHE SERVER
 export VANGRANT_WWW_PATH
 export VANGRANT_MAIN_PATH
+export VAGRANT_APACHE2_MOD
 sh "$VANGRANT_BOOTSTRAP_PATH"/screenplay/apache2-install.sh
 
 # INSTALL THE PHP
@@ -95,6 +110,7 @@ sh "$VANGRANT_BOOTSTRAP_PATH"/screenplay/phpmyadmin-install.sh
 
 # INSTALL OTHER APT-GET PACKAGES
 export VAGRANT_OTHER_PACKAGES
+export VAGRANT_PHPx_MYSQL
 sh "$VANGRANT_BOOTSTRAP_PATH"/screenplay/other-install.sh
 
 # GENERATE A INFO PHP FILE
@@ -105,6 +121,7 @@ sudo echo "<?php phpinfo(); ?>" > "$VANGRANT_WWW_PATH"/info.php
 echo "###########################################################"
 echo "####               ALL DONE! GOOD WORK! :)             ####"
 echo "###########################################################"
-echo "For more information -> http://localhost:your_port/info.php"
+echo "For more informations -> http://localhost:your_port/info.php"
+echo "For to use phpmyadmin -> http://localhost:your_port/phpmyadmin"
 
 exit 0

@@ -34,3 +34,8 @@ sudo mkdir /var/run/mysqld
 sudo ln -s /tmp/mysql.sock /var/run/mysqld/mysqld.sock
 sudo /etc/init.d/mysql start
 cd
+echo "###########################################################"
+echo "########           CREATING THE MYSQL USER          #######"
+echo "###########################################################"
+mysql -u root -e "CREATE USER '$VAGRANT_MYSQL_USER'@'localhost' IDENTIFIED BY '$VAGRANT_MYSQL_PWD';"
+mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO '$VAGRANT_MYSQL_USER'@'localhost' WITH GRANT OPTION;"

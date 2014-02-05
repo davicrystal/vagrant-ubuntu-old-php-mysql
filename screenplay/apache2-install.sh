@@ -7,7 +7,7 @@ echo "###########################################################"
 echo "####   2/6 - STARTING THE APACHE SERVER INSTALATION    ####"
 echo "###########################################################"
 
-sudo apt-get install -y apache2 apache2-threaded-dev libapache2-mod-php5
+export DEBIAN_FRONTEND=noninteractive | sudo apt-get install -y apache2 apache2-threaded-dev $VAGRANT_APACHE2_MOD
 
 echo "###########################################################"
 echo "####      3/6 - SETTING THE VANGRANT SYMBOLIC LINKS    ####"
