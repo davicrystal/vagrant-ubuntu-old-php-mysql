@@ -20,7 +20,7 @@ sudo scripts/mysql_install_db --user=mysql
 sudo chown -R root .
 sudo chown -R mysql data
 sudo mkdir "$VAGRANT_MYSQL_MY_CNF"
-sudo cp support-files/my-medium.cnf "$VAGRANT_MYSQL_MY_CNF"/my.cnf
+sudo cp my.cnf "$VAGRANT_MYSQL_MY_CNF"/my.cnf
 sudo chown -R mysql "$VAGRANT_MYSQL_MY_CNF"
 sudo cp support-files/mysql.server /etc/init.d/mysql.server
 sudo touch /var/lib/locales/supported.d/local
@@ -31,8 +31,10 @@ sudo ln -s /usr/local/mysql/bin/* /bin/
 sudo ln -s /etc/init.d/mysql.server /etc/init.d/mysql
 sudo update-rc.d mysql.server defaults
 sudo mkdir /var/run/mysqld
-sudo ln -s /tmp/mysql.sock /var/run/mysqld/mysqld.sock
-sudo /etc/init.d/mysql start
+sudo ln -s /var/run/mysqld/mysqld.sock /tmp/mysql.sock
+sudo touch /usr/local/mysql/data/vagrant-ubuntu-saucy-64.pid
+sudo chmod 777 -R  /usr/local/mysql/data
+/etc/init.d/mysql start
 cd
 echo "###########################################################"
 echo "########           CREATING THE MYSQL USER          #######"
