@@ -31,9 +31,11 @@ sudo ln -s /usr/local/mysql/bin/* /bin/
 sudo ln -s /etc/init.d/mysql.server /etc/init.d/mysql
 sudo update-rc.d mysql.server defaults
 sudo mkdir /var/run/mysqld
-sudo ln -s /var/run/mysqld/mysqld.sock /tmp/mysql.sock
+sudo ln -s /tmp/mysql.sock /var/run/mysqld/mysqld.sock
+sudo rm /usr/local/mysql/data/vagrant-ubuntu-saucy-64.err
 sudo touch /usr/local/mysql/data/vagrant-ubuntu-saucy-64.pid
 sudo chmod 777 -R  /usr/local/mysql/data
+sudo chmod 777 -R /var/run/mysqld/
 /etc/init.d/mysql start
 cd
 echo "###########################################################"
