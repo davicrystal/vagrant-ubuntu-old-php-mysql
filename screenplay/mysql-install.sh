@@ -6,38 +6,33 @@
 echo "###########################################################"
 echo "####              1/5 - MYSQL INSTALATION              ####"
 echo "###########################################################"
-sudo apt-get install libaio1
-sudo groupadd mysql
-sudo useradd -r -g mysql mysql
-cd /usr/local/
-sudo wget "$VAGRANT_MYSQL_VERSION"
-sudo tar zxvf "$VAGRANT_TARGZ_FILE"
-sudo mv "$VAGRANT_TMP_PATH"/ mysql/
-cd mysql/
-sudo chown -R mysql .
-sudo chgrp -R mysql .
-sudo scripts/mysql_install_db --user=mysql
-sudo chown -R root .
-sudo chown -R mysql data
-sudo mkdir "$VAGRANT_MYSQL_MY_CNF"
-sudo cp my.cnf "$VAGRANT_MYSQL_MY_CNF"/my.cnf
-sudo chown -R mysql "$VAGRANT_MYSQL_MY_CNF"
-sudo cp support-files/mysql.server /etc/init.d/mysql.server
+
 sudo touch /var/lib/locales/supported.d/local
 sudo chmod 777 /var/lib/locales/supported.d/local
 sudo echo "pt_BR.UTF-8 UTF-8" >  /var/lib/locales/supported.d/local
 sudo dpkg-reconfigure locales
+sudo apt-get install libaio1
+sudo useradd mysql
+cd /usr/local/
+sudo wget "$VAGRANT_MYSQL_VERSION"
+sudo tar zxvf "$VAGRANT_TARGZ_FILE"
+sudo mv "$VAGRANT_TMP_PATH"/ mysql/
+sudo rm "$VAGRANT_TARGZ_FILE"
+unset TMPDIR
+cd mysql/
+sudo scripts/mysql_install_db
+sudo chown -R mysql.mysql /usr/local/mysql/
+sudo cp support-files/mysql.server /etc/init.d/mysql.server
 sudo ln -s /usr/local/mysql/bin/* /bin/
 sudo ln -s /etc/init.d/mysql.server /etc/init.d/mysql
 sudo update-rc.d mysql.server defaults
 sudo mkdir /var/run/mysqld
+sudo chown mysql.mysql /var/run/mysqld/
 sudo ln -s /tmp/mysql.sock /var/run/mysqld/mysqld.sock
-sudo rm /usr/local/mysql/data/vagrant-ubuntu-saucy-64.err
-sudo touch /usr/local/mysql/data/vagrant-ubuntu-saucy-64.pid
-sudo chmod 777 -R  /usr/local/mysql/data
-sudo chmod 777 -R /var/run/mysqld/
-/etc/init.d/mysql start
+sudo chmod -R 777 /usr/local/mysql/data/
+sudo service mysql start
 cd
+
 echo "###########################################################"
 echo "########           CREATING THE MYSQL USER          #######"
 echo "###########################################################"
