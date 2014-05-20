@@ -12,7 +12,7 @@ cd "$VANGRANT_WWW_PATH"
 wget "$VAGRANT_PHP_VERSION"
 tar zxvf "$VAGRANT_TARGZ_FILE"
 cd "$VAGRANT_TMP_PATH"
-./configure --with-mysqli=mysqlnd
+./configure --with-mysqli=/usr/local/mysql
 sudo make
 sudo make -i install
 sudo cp php.ini-production "$VAGRANT_PHP_INI_PATH"/php.ini

@@ -7,11 +7,11 @@ echo "ATIVANDO REWRITE DO APACHE PARA URL AMIGÁVEL"
 
 sudo a2enmod rewrite
 sudo sed -i '/DocumentRoot \/var\/www/c 	DocumentRoot \/var\/www \n\n\<Directory \/var\/www\>\n AllowOverride All \n \<\/Directory\>' /etc/apache2/sites-available/000-default.conf
-sudo service apache2 restart
 
 echo "CONFIGURANDO O TIMEZONE NO PHP.INI"
 sudo sed -i '/;date.timezone =/c date.timezone = America\/Sao_Paulo' /etc/php5/apache2/php.ini
 sudo sed -i '/;date.timezone =/c date.timezone = America\/Sao_Paulo' /etc/php5/cli/php.ini
+sudo service apache2 restart
 
 echo "CONFIGURANDO A RESOLUÇÃO DE DNS"
 

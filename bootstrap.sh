@@ -27,9 +27,6 @@ VAGRANT_PHP_INI_PATH="/usr/local/lib"
 # IMPORTANT: THE CODE SUPORTS JUST.tar.gz FILES
 VAGRANT_MYSQL_VERSION="http://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.17-linux-glibc2.5-x86_64.tar.gz"
 
-# PATH FOR my.cnf
-VAGRANT_MYSQL_MY_CNF="/etc/mysql"
-
 # MYSQL USER WITH ALL PREVILEGES (DO NOT USE ROOT)
 VAGRANT_MYSQL_USER="test"
 
@@ -82,7 +79,6 @@ sudo apt-get update
 getFile "$VAGRANT_MYSQL_VERSION"
 getPath "$VAGRANT_TARGZ_FILE"
 export VAGRANT_MYSQL_VERSION
-export VAGRANT_MYSQL_MY_CNF
 export VAGRANT_MYSQL_USER
 export VAGRANT_MYSQL_PWD
 sh "$VANGRANT_BOOTSTRAP_PATH"/screenplay/mysql-install.sh

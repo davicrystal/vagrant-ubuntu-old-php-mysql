@@ -28,11 +28,16 @@ sudo ln -s /etc/init.d/mysql.server /etc/init.d/mysql
 sudo update-rc.d mysql.server defaults
 sudo mkdir /var/run/mysqld
 sudo chown mysql.mysql /var/run/mysqld/
+sudo chmod 777 -R /var/run/mysqld/
 sudo ln -s /tmp/mysql.sock /var/run/mysqld/mysqld.sock
-sudo chmod -R 777 /usr/local/mysql/data/
-sudo service mysql start
+sudo chmod 777 -R /usr/local/mysql/data/
+sudo sed -i '/# basedir =/c basedir = \/usr\/local\/mysql' /usr/local/mysql/my.cnf
+sudo sed -i '/# datadir =/c datadir = \/usr\/local\/mysql\/data\n pid-file = \/usr\/local\/mysql\/data\/mysql.pid\n language = /usr/local/mysql/share/english' /usr/local/mysql/my.cnf
+sudo mkdir /var/log/mysql
+sudo chowm mysql.mysql /var/log/mysql
+sudo chmod 777 -R /var/log/mysql
+#service mysql start
 cd
-
 echo "###########################################################"
 echo "########           CREATING THE MYSQL USER          #######"
 echo "###########################################################"
