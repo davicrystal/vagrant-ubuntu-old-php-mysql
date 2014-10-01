@@ -8,7 +8,7 @@
 # SET THE ENVIRONMENT VARIABLES
 
 # THE PATH FOR BOOTSTRAP IN THE VM ENVIROMENT
-VANGRANT_BOOTSTRAP_PATH="/vagrant/bootstrap"
+VANGRANT_BOOTSTRAP_PATH="/vagrant/vagrant-ubuntu-old-php-mysql"
 
 # THE PATH FOR VANGRANT FILE IN THE VM ENVIRONMENT
 VANGRANT_MAIN_PATH="/vagrant"
@@ -18,7 +18,8 @@ VANGRANT_WWW_PATH="/var/www"
 
 # URL FOR THE PHP INSTALLATION, SEE MORE VERSIONS OPTIONS IN http://www.php.net/releases/
 # IMPORTANT: THE CODE SUPORTS JUST.tar.gz FILES
-VAGRANT_PHP_VERSION="http://museum.php.net/php5/php-5.5.3.tar.gz"
+VAGRANT_PHP_VERSION="http://br1.php.net/get/php-5.5.17.tar.gz/from/this/mirror"
+#http://museum.php.net/php5/php-5.5.3.tar.gz"
 
 # PATH FOR php.ini
 VAGRANT_PHP_INI_PATH="/usr/local/lib"
@@ -53,7 +54,7 @@ VAGRANT_PHPx_MYSQL="php5-mysql"
 # PLEASE: DON'T INSTALL APACHE, PHP, MYSQL, PHPMYADMIN :/
 # THE FOLLOW PACKAGES WILL BE INSTALLED: apache2-threaded-dev libapache2-mod-php5 libxml2-dev
 # EXEMPLE OF USE: VAGRANT_OTHERS_PACKAGES="php5-cli php5-dev php5-mcrypt php5-curl"
-VAGRANT_OTHER_PACKAGES="php5-curl subversion php5-gd php5-json"
+VAGRANT_OTHER_PACKAGES="php5-curl subversion php5-gd php5-json curl"
 
 ###################################################################
 ### AFTER THIS POINT JUST CHANGE IF YOU KNOW WHAT YOU ARE DOING ###
