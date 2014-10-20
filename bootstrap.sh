@@ -26,7 +26,7 @@ VAGRANT_PHP_INI_PATH="/usr/local/lib"
 
 # URL FOR THE MYSQL INSTALLATION PACKAGE, SEE MORE VERSIONS OPTIONS IN http://downloads.mysql.com/archives/community/
 # IMPORTANT: THE CODE SUPORTS JUST.tar.gz FILES
-VAGRANT_MYSQL_VERSION="http://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.17-linux-glibc2.5-x86_64.tar.gz"
+VAGRANT_MYSQL_VERSION="http://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.21-linux-glibc2.5-x86_64.tar.gz"
 
 # MYSQL USER WITH ALL PREVILEGES (DO NOT USE ROOT)
 VAGRANT_MYSQL_USER="test"
