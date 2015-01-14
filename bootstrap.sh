@@ -2,7 +2,7 @@
 
 # SHELL BOOTSTRAP SCREENPLAY FOR GENERATE UBUNTU ENVIRONMENT WITH OLD OR NEW VERSIONS OF PHP AND MYSQL 
 # IMPORTANT: FOR VAGRANT USE ONLY / Vagrant version (1.4.3)
-# DESIGNED FOR UBUNTU 13.X USING AND PHP5.X
+# DESIGNED FOR UBUNTU 14.04 USING AND PHP5.X
 # AUTHOR: DAVI CRYSTAL / davicrystal@gmail.com / twitter.com/davicrystal
 
 # SET THE ENVIRONMENT VARIABLES
@@ -18,7 +18,7 @@ VANGRANT_WWW_PATH="/var/www"
 
 # URL FOR THE PHP INSTALLATION, SEE MORE VERSIONS OPTIONS IN http://www.php.net/releases/
 # IMPORTANT: THE CODE SUPORTS JUST.tar.gz FILES
-VAGRANT_PHP_VERSION="http://br1.php.net/get/php-5.5.17.tar.gz/from/this/mirror"
+VAGRANT_PHP_VERSION="http://br1.php.net/get/php-5.5.20.tar.gz/from/this/mirror"
 #http://museum.php.net/php5/php-5.5.3.tar.gz"
 
 # PATH FOR php.ini

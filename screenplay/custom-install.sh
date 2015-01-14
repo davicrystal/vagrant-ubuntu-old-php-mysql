@@ -24,3 +24,10 @@ echo "INSTALANDO COMPOSER"
 cd
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
+
+echo "ATUALIZANDO ÚLTIMA VERSÃO DO PHP"
+
+sudo add-apt-repository ppa:ondrej/php5
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install php5
