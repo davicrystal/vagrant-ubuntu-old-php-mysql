@@ -27,7 +27,7 @@ sudo mv composer.phar /usr/local/bin/composer
 
 echo "ATUALIZANDO ÚLTIMA VERSÃO DO PHP"
 
-sudo add-apt-repository ppa:ondrej/php5
+sudo add-apt-repository -y ppa:ondrej/php5
 sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install php5
+sudo apt-get -y upgrade
+sudo apt-get -y install php5
