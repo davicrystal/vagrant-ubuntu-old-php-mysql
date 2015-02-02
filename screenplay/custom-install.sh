@@ -33,7 +33,8 @@ sudo apt-get -y upgrade
 sudo apt-get -y install php5
 
 echo "CRIANDO BASE DE DADOS"
-#sudo service mysql start
+sudo vagrant
+#service mysql start
 
 #mysql -u root CREATE democosmos
 #mysql -u root CREATE cosmos_midas

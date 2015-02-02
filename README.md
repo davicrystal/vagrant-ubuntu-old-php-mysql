@@ -23,8 +23,8 @@ REQUIREMENTS
 ========
 
 - FOR VAGRANT USE ONLY / Vagrant version (1.4.3)
-- Ubuntu 13.x
-- The project got this Vagrant Box: http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box
+- Ubuntu 14.04
+- The project got this Vagrant Box: ubuntu/trusty64
 
 AUTHOR
 =========
