@@ -32,15 +32,17 @@ sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get -y install php5
 
-echo "CRIANDO BASE DE DADOS"
-sudo vagrant
+echo "ATENÇÃO: ACESSE A MÁQUINA VIRTUAL VIA SSH E INICIE O MYSQL (NÃO UTILIZE O ROOT)"
+
+#echo "CRIANDO BASE DE DADOS"
+#sudo vagrant
 #service mysql start
 
 #mysql -u root CREATE democosmos
 #mysql -u root CREATE cosmos_midas
 #mysql -u root CREATE cosmos_versoes
 
-echo "IMPORTANDO BASE DE DADOS"
+#echo "IMPORTANDO BASE DE DADOS"
 
 #mysql -u root -p 1234 democosmos < /var/www/bd-dev-dup/democosmos.sql
 #mysql -u root -p 1234 cosmos_midas < /var/www/bd-dev-dup/cosmos_midas.sql
