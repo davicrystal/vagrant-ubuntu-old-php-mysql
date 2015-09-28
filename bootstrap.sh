@@ -36,7 +36,7 @@ VAGRANT_MYSQL_PWD=""
 
 # URL FOR THE PHPMYADMIN INSTALLATION PACKAGE, SEE MORE VERSIONS OPTIONS IN http://www.phpmyadmin.net/home_page/downloads.php
 # IMPORTANT: THE CODE SUPORTS JUST.tar.gz FILES
-VAGRANT_PHPMYADMIN_VERSION="http://sourceforge.net/projects/phpmyadmin/files/phpMyAdmin/4.1.6/phpMyAdmin-4.1.6-all-languages.tar.gz"
+VAGRANT_PHPMYADMIN_VERSION="https://files.phpmyadmin.net/phpMyAdmin/4.3.13.1/phpMyAdmin-4.3.13.1-all-languages.tar.gz"
 
 # PATH FOR PHPMYADMIN INSTALLATION
 VAGRANT_PHPMYADMIN_PATH="/usr/share/"
