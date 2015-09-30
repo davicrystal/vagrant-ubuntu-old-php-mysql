@@ -18,7 +18,7 @@ VANGRANT_WWW_PATH="/var/www"
 
 # URL FOR THE PHP INSTALLATION, SEE MORE VERSIONS OPTIONS IN http://www.php.net/releases/
 # IMPORTANT: THE CODE SUPORTS JUST.tar.gz FILES
-VAGRANT_PHP_VERSION="http://br1.php.net/get/php-5.5.26.tar.gz/from/this/mirror"
+VAGRANT_PHP_VERSION="http://br1.php.net/get/php-5.5.29.tar.gz/from/this/mirror"
 #http://museum.php.net/php5/php-5.5.3.tar.gz"
 
 # PATH FOR php.ini
@@ -26,7 +26,7 @@ VAGRANT_PHP_INI_PATH="/usr/local/lib"
 
 # URL FOR THE MYSQL INSTALLATION PACKAGE, SEE MORE VERSIONS OPTIONS IN http://downloads.mysql.com/archives/community/
 # IMPORTANT: THE CODE SUPORTS JUST.tar.gz FILES
-VAGRANT_MYSQL_VERSION="http://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.23-linux-glibc2.5-x86_64.tar.gz"
+VAGRANT_MYSQL_VERSION="http://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.26-linux-glibc2.5-i686.tar.gz"
 
 # MYSQL USER WITH ALL PREVILEGES (DO NOT USE ROOT)
 VAGRANT_MYSQL_USER="test"
