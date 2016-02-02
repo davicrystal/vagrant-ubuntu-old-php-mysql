@@ -18,7 +18,7 @@ VANGRANT_WWW_PATH="/var/www"
 
 # URL FOR THE PHP INSTALLATION, SEE MORE VERSIONS OPTIONS IN http://www.php.net/releases/
 # IMPORTANT: THE CODE SUPORTS JUST.tar.gz FILES
-VAGRANT_PHP_VERSION="http://br1.php.net/get/php-5.5.30.tar.gz/from/this/mirror"
+VAGRANT_PHP_VERSION="http://br1.php.net/get/php-5.5.31.tar.gz/from/this/mirror"
 #http://museum.php.net/php5/php-5.5.3.tar.gz"
 
 # PATH FOR php.ini
