@@ -54,7 +54,7 @@ VAGRANT_PHPx_MYSQL="php5-mysql"
 # PLEASE: DON'T INSTALL APACHE, PHP, MYSQL, PHPMYADMIN :/
 # THE FOLLOW PACKAGES WILL BE INSTALLED: apache2-threaded-dev libapache2-mod-php5 libxml2-dev
 # EXEMPLE OF USE: VAGRANT_OTHERS_PACKAGES="php5-cli php5-dev php5-mcrypt php5-curl"
-VAGRANT_OTHER_PACKAGES="php5-curl subversion php5-gd php5-json curl"
+VAGRANT_OTHER_PACKAGES="php5-curl subversion php5-gd php5-json php5-mcrypt curl"
 
 ###################################################################
 ### AFTER THIS POINT JUST CHANGE IF YOU KNOW WHAT YOU ARE DOING ###
